@@ -31,5 +31,6 @@ public class CSCI_Assignment2_YashMehra{
         System.out.println(new CSCI_Fraction_YashMehra(0,0).add(new CSCI_Fraction_YashMehra(1,2)).toString());
         System.out.println("testing for inf + -inf");
         System.out.println(new CSCI_Fraction_YashMehra(1,0).add(new CSCI_Fraction_YashMehra(1,0).negate()).toString());
+        System.out.println(new CSCI_Fraction_YashMehra(1,0).subtract(new CSCI_Fraction_YashMehra(1,0).negate()).toString());
     }
 }

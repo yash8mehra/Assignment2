@@ -203,11 +203,15 @@ which is used to simplify the fraction.
 ************************************************************************/
     public CSCI_Fraction_YashMehra subtract(CSCI_Fraction_YashMehra fractionSub){
         if(fractionSub.toString().equals("NaN") || this.toString().equals("NaN")){
-            return new CSCI_Fraction_YashMehra(0,0); //NaN
-        } else if (fractionSub.toString().equals("Infinity") || this.toString().equals("Infinity")){
-            return new CSCI_Fraction_YashMehra(-1,0); //-Infinity
+            return new CSCI_Fraction_YashMehra(0); //NaN
+        } else if (fractionSub.toString().equals("Infinity") && this.toString().equals("-Infinity")) {
+            return new CSCI_Fraction_YashMehra(-1); //zero
+        } else if (fractionSub.toString().equals("-Infinity") && this.toString().equals("Infinity")) {
+            return new CSCI_Fraction_YashMehra(0,1); //zero
+        }else if (fractionSub.toString().equals("Infinity") || this.toString().equals("Infinity")){
+            return new CSCI_Fraction_YashMehra(-1); //-Infinity
         } else if (fractionSub.toString().equals("-Infinity") || this.toString().equals("-Infinity")){
-            return new CSCI_Fraction_YashMehra(1,0); //Infinity
+            return new CSCI_Fraction_YashMehra(1); //Infinity
         }
         long numer = (numerator * fractionSub.denominator) - (fractionSub.numerator * denominator);
         long denom = denominator * fractionSub.denominator;
