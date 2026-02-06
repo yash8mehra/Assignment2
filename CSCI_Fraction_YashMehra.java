@@ -1,22 +1,29 @@
 class CSCI_Fraction_YashMehra{
-    private int numerator;
-    private int denominator;
+    private long numerator;
+    private long denominator;
 
     
 
     
     //things to do from now on
     //make fraction numer over denom
-    public CSCI_Fraction_YashMehra(){
-        this.numerator = 0;
+    //for x/y fractions
+    public CSCI_Fraction_YashMehra(long numer, long denom){
+
+        //simplify the fraction first
+
+        long gcd = greatestCommonDivisor(numer, denom);
+
+        this.numerator = numer / gcd;
+        this.denominator = denom / gcd;
+    }
+    //for x/1 fractions
+    public CSCI_Fraction_YashMehra(long numer){
+        this.numerator = numer;
         this.denominator = 1;
     }
-
-    //getters
-    
-
     //toString() method
-    public String toString(int numerator, int denominator){
+    public String toString(){
     if ((numerator == 0)&&(denominator == 0)){
         return "NaN";
     } else if (denominator == 0){
@@ -34,32 +41,35 @@ class CSCI_Fraction_YashMehra{
     return strNumer+"/"+strDenom;
 
     }
-    //Simplify the fraction 
-    public void simplifyFraction(){
-
-    }
     //gcd
-    public int greatestCommonDivisor(int a, int b){
-        if ( a < 0 ){
-            negate(a);}
-        int remainder = 0;
-
-            while (b != 0){
-                remainder = a % b;
-                a = b;
-                b = remainder;
-            }
-                if (a == 0){
-                    a = 1;
-                    return 
-                }
+    public long greatestCommonDivisor(long numer, long denom){
+        if (numer < 0){
+            numer = -numer;
+        }
+        if (denom < 0){
+            denom = -denom;
+        }
+        while (denom!= 0){
+            long remainder = numer % denom;
+            numer = denom;
+            denom = remainder;
+        }
+        if (numer == 0){
+            numer = 1;
+        }
+        return numer;
     }
     //adding subtracting multiplying division methods
-    public CSCI_Fraction_YashMehra add(){
-
+    public CSCI_Fraction_YashMehra add(CSCI_Fraction_YashMehra fractionadd){
+        long numer = (this.numerator * fractionadd.denominator) + (fractionadd.numerator * this.denominator);
+        long denom = this.denominator * fractionadd.denominator;
+        return new CSCI_Fraction_YashMehra(numer, denom);
 
     }
-    public CSCI_Fraction_YashMehra subtract(){
+    public CSCI_Fraction_YashMehra subtract(CSCI_Fraction_YashMehra fractionsub){
+        long numer = (this.numerator * fractionsub.denominator) - (fractionsub.numerator * this.denominator);
+        long denom = this.denominator * fractionsub.denominator;
+        return new CSCI_Fraction_YashMehra(numer, denom);
 
 
     }
