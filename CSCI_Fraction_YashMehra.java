@@ -73,24 +73,44 @@ class CSCI_Fraction_YashMehra{
 
 
     }
-    public CSCI_Fraction_YashMehra multiply(){
-
+    public CSCI_Fraction_YashMehra multiply(CSCI_Fraction_YashMehra fractionmult){
+        long numer = (this.numerator * fractionmult.numerator);
+        long denom = (this.denominator * fractionmult.denominator);
+        return new CSCI_Fraction_YashMehra(numer,denom);
 
 
     }
-    public CSCI_Fraction_YashMehra divide(){
-
+    public CSCI_Fraction_YashMehra divide(CSCI_Fraction_YashMehra fractionDiv){
+        long numer = this.numerator * fractionDiv.denominator;
+        long denom = this.denominator * fractionDiv.numerator;
+        return new CSCI_Fraction_YashMehra(numer,denom);
 
 
     }
     //raised to power method (pow), negate method (negative)
     public CSCI_Fraction_YashMehra negate(){
-
+            return new CSCI_Fraction_YashMehra(-1 * this.numerator, this.denominator);
 
     }
-    public CSCI_Fraction_YashMehra pow(){
-
-
+    public CSCI_Fraction_YashMehra pow(int exp){
+        if (exp == 0){
+            return new CSCI_Fraction_YashMehra(1); //anything to the zero power is 1
+        } else {
+            if (exp > 0) {
+                long numer = numerator;
+                long denom = denominator;
+                for (int i = 0; i < exp; i++){
+                    numer *= numerator;
+                    denom *= denominator;
+                }
+            } else if(exp < 0) {
+                long numer = denominator;
+                long denom = numerator;
+                for (int i = 0; i < exp; i++){
+                    numer *= denominator;
+                    denom *= numerator;
+                }
+        }
     }
     //then main to test 
 
