@@ -1,0 +1,28 @@
+Script started on 2026-02-05 19:07:23-05:00 [TERM="xterm-256color" TTY="/dev/pts/14" COLUMNS="120" LINES="30"]
+[?2004h]0;mehray2@thur114-hp1: ~/CSCI271/Assignment2[01;32mmehray2@thur114-hp1[00m:[01;34m~/CSCI271/Assignment2[00m$ javac CSCI_Fraction_YashMehra.java CACI[K[KS[K[KSCI_Assignment2_YashMehra.java 
+[?2004l[?2004h]0;mehray2@thur114-hp1: ~/CSCI271/Assignment2[01;32mmehray2@thur114-hp1[00m:[01;34m~/CSCI271/Assignment2[00m$ java CSCI_Assignment2_YashMehra 
+[?2004l-4/3
+2/3
+Infinity
+-Infinity
+NaN
+7
+5/6
+1/6
+1/6
+3/2
+-1/2
+-Infinity
+NaN
+8/27
+1
+9/4
+Testing for wakcky cases with operations with NaN, and infinity
+NaN
+testing for inf + -inf
+0
+0
+[?2004h]0;mehray2@thur114-hp1: ~/CSCI271/Assignment2[01;32mmehray2@thur114-hp1[00m:[01;34m~/CSCI271/Assignment2[00m$ exit
+[?2004lexit
+
+Script done on 2026-02-05 19:07:58-05:00 [COMMAND_EXIT_CODE="0"]
